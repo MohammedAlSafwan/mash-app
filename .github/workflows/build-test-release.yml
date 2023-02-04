@@ -1,0 +1,58 @@
+name: mashedApp CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/action-setup-ci
+        with:
+          github_token: ${{ github.token }}
+          nx_cloud_token: ${{ secrets.NX_CLOUD_TOKEN }}
+
+      - name: Setup postgres container
+        run: docker-compose -f $GITHUB_WORKSPACE/apps/database/postgres/docker-compose.yml up -d
+
+      - name: Start api
+        run: npm run typeorm -- migration:run && npm start api &
+        env:
+          TEST: true
+
+      - name: Enforce naming conventions
+        run: npm run lint:file-folder-convention
+
+      - name: Lint affected files
+        run: npm run affected:lint
+
+      - name: Build affected apps
+        run: npm run affected:build
+
+      - name: Test affected apps
+        run: npm run affected:test -- --code-coverage
+
+      - name: Test affected apps e2e
+        run: npm run affected:e2e
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/apps/api/
+          fail_ci_if_error: false
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: ./coverage
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npx semantic-release

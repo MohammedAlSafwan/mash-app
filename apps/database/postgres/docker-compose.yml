@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+  database:
+    image: postgres:13
+    container_name: mashed_app-postgres
+    ports:
+      - 5433:5432
+    restart: always
+    command:
+      - postgres
+      - -c
+      - listen_addresses=*
+    environment:
+      POSTGRES_DB: mashed_app
+      POSTGRES_HOST_AUTH_METHOD: "trust" # Not recommended, only for demo purposes
+    volumes:
+      # seeding
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      # named volume
+      - mashed_app-data:/var/lib/postgresql/mashed_app/data
+
+volumes:
+  mashed_app-data:

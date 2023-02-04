@@ -1,0 +1,46 @@
+version: "3.6"
+services:
+  database:
+    container_name: mashed_app-postgres-full-stack
+    image: postgres:latest
+    build:
+      context: .
+      dockerfile: ./apps/database/postgres/Dockerfile
+    restart: always
+    command:
+      - postgres
+      - -c
+      - listen_addresses=*
+    environment:
+      POSTGRES_DB: mashed_app
+      POSTGRES_HOST_AUTH_METHOD: "trust" # Not recommended, only for demo purposes
+    volumes:
+      # seeding
+      - ./apps/database/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      # named volume
+      - mashed_app-data:/var/lib/postgresql/mashed_app/data
+  webapp:
+    container_name: webapp-full-stack
+    build:
+      context: .
+      dockerfile: ./apps/webapp/Dockerfile
+    ports:
+      - "${DROPLET_PORT}:80"
+  api:
+    container_name: api-full-stack
+    environment:
+      - DATABASE_PORT=5432
+      - DATABASE_HOST=mashed_app-postgres-full-stack
+    build:
+      context: .
+      dockerfile: ./apps/api/Dockerfile
+    ports:
+      - "3333:3333"
+  nginx:
+    container_name: load-balancer-health-check
+    image: nginx:latest
+    ports:
+      - "80:80"
+
+volumes:
+  mashed_app-data:

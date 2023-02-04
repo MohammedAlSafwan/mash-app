@@ -1,0 +1,21 @@
+version: "3.6"
+services:
+  database:
+    image: mongo:4.4.1-bionic
+    container_name: mashed_app-mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=mashed_app
+      - MONGO_INITDB_ROOT_USERNAME=mashed_app
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    volumes:
+      # seeding scripts
+      - ./mongo-entrypoint:/docker-entrypoint-initdb.d
+      # named volumes
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+
+volumes:
+  mongodb:
+  mongoconfig:

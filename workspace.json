@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "cli": "apps/cli",
+    "models": "libs/models",
+    "webapp": "apps/webapp",
+    "webapp-e2e": "apps/webapp-e2e"
+  }
+}

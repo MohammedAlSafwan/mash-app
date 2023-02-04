@@ -1,0 +1,4 @@
+856e97f26c143264b7cb9e031e4c89e435ef3cca		branch 'master' of https://github.com/chocolat-chaud-io/stator
+40730594020e5c382c8cbb7922a3e88eff1272d4	not-for-merge	branch '117/integrate-redis' of https://github.com/chocolat-chaud-io/stator
+7ede32f892a152c84d18c97a39911ed6f2594368	not-for-merge	branch '32/add-dockerfiles' of https://github.com/chocolat-chaud-io/stator
+f0f7c821af758fb7633d0055118adf7245864546	not-for-merge	branch 'renovate/babel-monorepo' of https://github.com/chocolat-chaud-io/stator
