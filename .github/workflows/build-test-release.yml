@@ -1,4 +1,4 @@
-name: mashedApp CI
+name: mashed-app CI
 
 on:
   pull_request:

@@ -41,6 +41,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           dockerfile: dockerfiles/webapp/Dockerfile
-          repository: mashed_potato_org/mashedApp/mashedApp-webapp
+          repository: mashed_potato_org/mashed-app/mashed-app-webapp
           tag_with_ref: true
           tag_with_sha: true

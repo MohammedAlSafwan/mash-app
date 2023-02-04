@@ -12,11 +12,11 @@ export class EnforceValidImportsApi extends Command {
     category: "enforcers",
     description:
       "This script will make sure that your imports are valid in the API. This is used to avoid import errors than can be hard to spot.",
-    examples: [["A basic example", "npm run mashedApp-cli enforce-valid-imports-api"]],
+    examples: [["A basic example", "npm run mashed-app-cli enforce-valid-imports-api"]],
   })
 
   async execute(): Promise<number | void> {
-    const invalidImportRegex = /import .*mashedApp\/[a-zA-Z]+\//gm
+    const invalidImportRegex = /import .*mashed-app\/[a-zA-Z]+\//gm
     const fileContainingInvalidImports = []
 
     async function validateEntryName(entry) {
@@ -32,7 +32,7 @@ export class EnforceValidImportsApi extends Command {
     }
 
     if (fileContainingInvalidImports.length > 0) {
-      const errorMessage = `${fileContainingInvalidImports.length} file(s) have invalid imports. They should NOT look like this: "@mashedApp/models/something/entity"`
+      const errorMessage = `${fileContainingInvalidImports.length} file(s) have invalid imports. They should NOT look like this: "@mashed-app/models/something/entity"`
 
       console.error(errorMessage)
       console.error(fileContainingInvalidImports)

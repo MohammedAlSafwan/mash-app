@@ -9,7 +9,7 @@ export class GenerateEntityIndexFile extends Command {
   static usage = Command.Usage({
     category: "generators",
     description: "This script will generate index file for the model library.",
-    examples: [["A basic example", "npm run mashedApp-cli generate-entity-index-file"]],
+    examples: [["A basic example", "npm run mashed-app-cli generate-entity-index-file"]],
   })
 
   async execute(): Promise<number | void> {

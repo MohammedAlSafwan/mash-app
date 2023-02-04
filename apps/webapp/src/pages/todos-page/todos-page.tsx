@@ -1,6 +1,6 @@
 import { Add, Delete, Done, Edit } from "@mui/icons-material"
 import { Card, CardContent, CircularProgress, List, ListItem, ListItemSecondaryAction, ListItemText, TextField } from "@mui/material"
-import { Todo } from "@mashedApp/models"
+import { Todo } from "@mashed-app/models"
 import React, { ChangeEvent, useEffect, useState } from "react"
 
 import { LoadingIconButton } from "../../loading-icon-button/loading-icon-button"

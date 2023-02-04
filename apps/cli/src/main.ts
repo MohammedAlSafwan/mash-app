@@ -9,8 +9,8 @@ import { RenameProject } from "./commands/rename-project"
 const [, , ...args] = process.argv
 
 const cli = new Cli({
-  binaryLabel: `mashedApp-cli`,
-  binaryName: `npm run mashedApp-cli`,
+  binaryLabel: `mashed-app-cli`,
+  binaryName: `npm run mashed-app-cli`,
   binaryVersion: `1.0.0`,
 })
 

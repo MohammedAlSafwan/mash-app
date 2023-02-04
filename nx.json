@@ -1,5 +1,5 @@
 {
-  "npmScope": "mashedApp",
+  "npmScope": "mashed-app",
   "affected": {
     "defaultBase": "master"
   },
@@ -37,7 +37,7 @@
   "cli": {
     "defaultCollection": "@nrwl/nest"
   },
-  "defaultProject": "api",
+  "defaultProject": ["api"],
   "generators": {
     "@nrwl/react": {
       "application": {

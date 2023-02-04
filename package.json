@@ -1,5 +1,5 @@
 {
-  "name": "mashedApp",
+  "name": "mashed-app",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -11,11 +11,11 @@
     "affected:libs": "nx affected:libs",
     "affected:lint": "nx affected:lint",
     "affected:test": "nx affected:test",
-    "build": "nx build",
+    "build": "nx run-many --target=build --all",
     "commit": "cz",
     "dep-graph": "nx dep-graph",
-    "docker:build:api": "docker build -t mashedApp-api -f dockerfiles/api/Dockerfile .",
-    "docker:build:webapp": "docker build -t mashedApp-webapp -f dockerfiles/webapp/Dockerfile .",
+    "docker:build:api": "docker build -t mashed-app-api -f apps/api/Dockerfile .",
+    "docker:build:webapp": "docker build -t mashed-app-webapp -f apps/webapp/Dockerfile .",
     "e2e": "nx e2e",
     "format": "nx format:write",
     "format:check": "nx format:check",
@@ -46,7 +46,7 @@
     "workspace-generator": "nx workspace-generator",
     "generate-api-redux": "node node_modules/@rtk-query/codegen-openapi/lib/bin/cli.js apps/cli/src/open-api-config.ts && node cli/main.js generate-cache-key-file",
     "cli": "node cli/main.js",
-    "mashedApp-cli": "node cli/main.js"
+    "mashed-app-cli": "node cli/main.js"
   },
   "husky": {
     "hooks": {

@@ -1,4 +1,4 @@
-import { Todo } from "@mashedApp/models"
+import { Todo } from "@mashed-app/models"
 import * as supertest from "supertest"
 import { Repository } from "typeorm"
 

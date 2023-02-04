@@ -13,8 +13,8 @@ export class RenameProject extends Command {
 
   static usage = Command.Usage({
     category: "getting-started",
-    description: "This script will rename all occurrences of mashedApp and chocolat-chaud with your own names.",
-    examples: [["A basic example", "npm run mashedApp-cli rename-project --organization mashed_potato_org --project mashedApp"]],
+    description: "This script will rename all occurrences of mashed-app and chocolat-chaud with your own names.",
+    examples: [["A basic example", "npm run mashed-app-cli rename-project --organization mashed_potato_org --project mashed-app"]],
   })
 
   async execute(): Promise<number | void> {
@@ -48,7 +48,7 @@ export class RenameProject extends Command {
             const isDatabaseFile = databaseFiles.some(databaseFile => entry.includes(databaseFile))
             const replacedFileContent = fileContent
               .replace(/mashed_potato_org/gim, this.organization)
-              .replace(/mashedApp/gim, isDatabaseFile ? databaseName : camelCaseProjectName)
+              .replace(/mashed-app/gim, isDatabaseFile ? databaseName : camelCaseProjectName)
             await fs.promises.writeFile(entry, replacedFileContent, "utf-8")
           }
         }

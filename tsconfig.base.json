@@ -17,10 +17,10 @@
     "noImplicitUseStrict": true,
     "baseUrl": ".",
     "paths": {
-      "@mashedApp/models": ["libs/models/src/index.ts"]
+      "@mashed-app/models": ["libs/models/src/index.ts"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "exclude": ["mashedApp/node_modules", "tmp"]
+  "exclude": ["mashed-app/node_modules", "tmp"]
 }

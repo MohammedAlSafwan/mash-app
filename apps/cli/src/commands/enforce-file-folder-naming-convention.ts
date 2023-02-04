@@ -10,7 +10,7 @@ export class EnforceFileFolderNamingConvention extends Command {
   static usage = Command.Usage({
     category: "enforcers",
     description: "This script will make sure that your folders and file use kebab-case.",
-    examples: [["A basic example", "npm run mashedApp-cli generate-cache-key-file"]],
+    examples: [["A basic example", "npm run mashed-app-cli generate-cache-key-file"]],
   })
 
   async execute(): Promise<number | void> {

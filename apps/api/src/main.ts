@@ -10,7 +10,7 @@ import { AppModule } from "./app/app.module"
 import { getWinstonConsoleFormat } from "./utils/utils"
 
 function configureSwagger(app: NestFastifyApplication) {
-  const swaggerConfig = new DocumentBuilder().setTitle("mashedApp").setDescription("The mashedApp API description").setVersion("1.0").build()
+  const swaggerConfig = new DocumentBuilder().setTitle("mashed-app").setDescription("The mashed-app API description").setVersion("1.0").build()
   const swaggerOptions: SwaggerDocumentOptions = {
     // This basically has no effect because of this bug: https://github.com/nestjsx/crud/issues/759
     operationIdFactory: (controllerKey, methodKey) => {

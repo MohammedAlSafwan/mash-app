@@ -1,7 +1,7 @@
 import { Controller } from "@nestjs/common"
 import { ApiOperation, ApiTags } from "@nestjs/swagger"
 import { Crud, CrudController } from "@nestjsx/crud"
-import { Todo } from "@mashedApp/models"
+import { Todo } from "@mashed-app/models"
 
 import { TodosService } from "../../services/todos.service"
 

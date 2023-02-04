@@ -1,6 +1,6 @@
 import { ConfigService } from "@nestjs/config"
 import { TypeOrmModuleOptions } from "@nestjs/typeorm/dist/interfaces/typeorm-options.interface"
-import { Todo } from "@mashedApp/models"
+import { Todo } from "@mashed-app/models"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const ormConfig = require("../../../database/orm-config")
