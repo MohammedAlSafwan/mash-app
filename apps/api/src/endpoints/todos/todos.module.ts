@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common"
 import { TypeOrmModule } from "@nestjs/typeorm"
-import { Todo } from "@mashed-app/models"
+import { Todo } from "@mashedapp/models"
 
 import { TodosServiceModule } from "../../services/todos-service.module"
 import { TodosService } from "../../services/todos.service"

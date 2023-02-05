@@ -1,20 +1,20 @@
 <div align="center">
-  <h1>mashed-app</h1>
+  <h1>mashedapp</h1>
 </div>
 <div align="center">
-  <strong>mashed-app, your go-to template for the perfect stack.</strong>
+  <strong>mashedapp, your go-to template for the perfect stack.</strong>
 </div>
 </br>
 
 <div align="center">
-  <a href="https://badge.fury.io/gh/mashed_potato_org%2Fmashed-app">
-    <img src="https://badge.fury.io/gh/mashed_potato_org%2Fmashed-app.svg" alt="GitHub version" />
+  <a href="https://badge.fury.io/gh/mashed_potato_org%2Fmashedapp">
+    <img src="https://badge.fury.io/gh/mashed_potato_org%2Fmashedapp.svg" alt="GitHub version" />
   </a>
-  <a href="https://github.com/mashed_potato_org/mashed-app/actions">
-    <img src="https://github.com/mashed_potato_org/mashed-app/workflows/mashed-app%20CI/badge.svg" alt="Github action status" />
+  <a href="https://github.com/mashed_potato_org/mashedapp/actions">
+    <img src="https://github.com/mashed_potato_org/mashedapp/workflows/mashedapp%20CI/badge.svg" alt="Github action status" />
   </a>
-  <a href="https://codecov.io/gh/mashed_potato_org/mashed-app">
-    <img src="https://codecov.io/gh/mashed_potato_org/mashed-app/branch/master/graph/badge.svg?token=3XN225FUIT" alt="Coverage Status" />
+  <a href="https://codecov.io/gh/mashed_potato_org/mashedapp">
+    <img src="https://codecov.io/gh/mashed_potato_org/mashedapp/branch/master/graph/badge.svg?token=3XN225FUIT" alt="Coverage Status" />
   </a>
   <a href="http://commitizen.github.io/cz-cli/">
     <img src="https://img.shields.io/badge/commitizen-friendly-ff69b4.svg" alt="Commitizen friendly" />
@@ -37,7 +37,7 @@
   <a href="http://makeapullrequest.com">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
   </a>
-  <a href="https://github.com/mashed_potato_org/mashed-app">
+  <a href="https://github.com/mashed_potato_org/mashedapp">
     <img src="https://img.shields.io/badge/Made%20With-Love-orange.svg" alt="Made With Love" />
   </a>
 </div>
@@ -85,13 +85,13 @@ Have you ever started a new project by yourself?<br/>
 If so, you probably know that it is tedious to set up all the necessary tools.<br/>
 Just like you, the part I enjoy the most is coding, not boilerplate.
 
-Say hi to mashed-app, a full-stack [TypeScript](https://github.com/microsoft/TypeScript) template that enforces conventions, handles releases, automates deployments and much more!
+Say hi to mashedapp, a full-stack [TypeScript](https://github.com/microsoft/TypeScript) template that enforces conventions, handles releases, automates deployments and much more!
 
 If you want more details about how this idea was implemented, I recommend reading the [series of blog articles](https://yann510.hashnode.dev/creating-the-modern-developer-stack-template-part-1-ckfl56axy02e85ds18pa26a6z) I wrote on the topic.
 
 </br>
 
-## 🦄 [Demo Application](https://www.mashed-app.dev)
+## 🦄 [Demo Application](https://www.mashedapp.dev)
 
 This template includes a demo **todo application** that serves as an example of sound patterns.
 Of course, you won't be creating a todo application for your project, but you can use this as an example of useful patterns and learn how to use the technologies presented in this project.
@@ -100,7 +100,7 @@ Of course, you won't be creating a todo application for your project, but you ca
 
 ### Technical Stack
 
-For a detailed list of all those technologies, you can read this [blog article](https://yann510.hashnode.dev/mashed-app-a-full-stack-template-releases-deployments-enforced-conventions-ckhmnyhr903us9ms1b20lgi3b).
+For a detailed list of all those technologies, you can read this [blog article](https://yann510.hashnode.dev/mashedapp-a-full-stack-template-releases-deployments-enforced-conventions-ckhmnyhr903us9ms1b20lgi3b).
 
  | Deployment                                                                       | Database                                         | Backend                                                       | Frontend                                                      | Testing                                                                          | Conventions                                                                      |
  | -------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -280,7 +280,7 @@ Here is an example from our todo app:
 ```typescript
 import { Controller } from "@nestjs/common"
 import { Crud, CrudController } from "@nestjsx/crud"
-import { Todo } from "@mashed-app/models"
+import { Todo } from "@mashedapp/models"
 
 import { TodosService } from "./todos.service"
 

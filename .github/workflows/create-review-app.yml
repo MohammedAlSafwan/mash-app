@@ -81,9 +81,9 @@ jobs:
             ssh-add ~/.ssh/id_rsa
             cd ~
             ssh-keyscan github.com >> ~/.ssh/known_hosts
-            rm -rf mashed-app
-            git clone git@github.com:mashed_potato_org/mashed-app.git
-            cd mashed-app
+            rm -rf mashedapp
+            git clone git@github.com:mashed_potato_org/mashedapp.git
+            cd mashedapp
             git checkout ${{ env.GITHUB_HEAD_REF_SLUG }}
             echo "DROPLET_PORT=${{ env.DROPLET_PORT }}" > .env
             docker-compose config

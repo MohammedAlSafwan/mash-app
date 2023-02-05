@@ -55,7 +55,7 @@ EnforceFileFolderNamingConvention.paths = [["enforce-file-folder-naming-conventi
 EnforceFileFolderNamingConvention.usage = clipanion_1.Command.Usage({
     category: "enforcers",
     description: "This script will make sure that your folders and file use kebab-case.",
-    examples: [["A basic example", "npm run mashed-app-cli generate-cache-key-file"]],
+    examples: [["A basic example", "npm run mashedapp-cli generate-cache-key-file"]],
 });
 
 
@@ -73,7 +73,7 @@ const clipanion_1 = __webpack_require__("clipanion");
 const utils_1 = __webpack_require__("./apps/cli/src/utils.ts");
 class EnforceValidImportsApi extends clipanion_1.Command {
     async execute() {
-        const invalidImportRegex = /import .*mashed-app\/[a-zA-Z]+\//gm;
+        const invalidImportRegex = /import .*mashedapp\/[a-zA-Z]+\//gm;
         const fileContainingInvalidImports = [];
         async function validateEntryName(entry) {
             const fileContent = await fs_1.default.promises.readFile(entry, { encoding: "utf-8" });
@@ -86,7 +86,7 @@ class EnforceValidImportsApi extends clipanion_1.Command {
             await validateEntryName(entry);
         }
         if (fileContainingInvalidImports.length > 0) {
-            const errorMessage = `${fileContainingInvalidImports.length} file(s) have invalid imports. They should NOT look like this: "@mashed-app/models/something/entity"`;
+            const errorMessage = `${fileContainingInvalidImports.length} file(s) have invalid imports. They should NOT look like this: "@mashedapp/models/something/entity"`;
             console.error(errorMessage);
             console.error(fileContainingInvalidImports);
             process.exit(1);
@@ -99,7 +99,7 @@ EnforceValidImportsApi.paths = [["enforce-valid-imports-api"]];
 EnforceValidImportsApi.usage = clipanion_1.Command.Usage({
     category: "enforcers",
     description: "This script will make sure that your imports are valid in the API. This is used to avoid import errors than can be hard to spot.",
-    examples: [["A basic example", "npm run mashed-app-cli enforce-valid-imports-api"]],
+    examples: [["A basic example", "npm run mashedapp-cli enforce-valid-imports-api"]],
 });
 
 
@@ -168,7 +168,7 @@ GenerateCacheKeyFile.paths = [["generate-cache-key-file"]];
 GenerateCacheKeyFile.usage = clipanion_1.Command.Usage({
     category: "generators",
     description: "This script will generate the required cache key files for your redux webapp.",
-    examples: [["A basic example", "npm run mashed-app-cli generate-cache-key-file"]],
+    examples: [["A basic example", "npm run mashedapp-cli generate-cache-key-file"]],
 });
 
 
@@ -223,7 +223,7 @@ GenerateEntityIndexFile.paths = [["generate-entity-index-file"]];
 GenerateEntityIndexFile.usage = clipanion_1.Command.Usage({
     category: "generators",
     description: "This script will generate index file for the model library.",
-    examples: [["A basic example", "npm run mashed-app-cli generate-entity-index-file"]],
+    examples: [["A basic example", "npm run mashedapp-cli generate-entity-index-file"]],
 });
 function hashCode(str) {
     let hash = 0;
@@ -293,7 +293,7 @@ class RenameProject extends clipanion_1.Command {
                         const isDatabaseFile = databaseFiles.some(databaseFile => entry.includes(databaseFile));
                         const replacedFileContent = fileContent
                             .replace(/mashed_potato_org/gim, this.organization)
-                            .replace(/mashed-app/gim, isDatabaseFile ? databaseName : camelCaseProjectName);
+                            .replace(/mashedapp/gim, isDatabaseFile ? databaseName : camelCaseProjectName);
                         await fs_1.default.promises.writeFile(entry, replacedFileContent, "utf-8");
                     }
                 }
@@ -317,8 +317,8 @@ exports.RenameProject = RenameProject;
 RenameProject.paths = [["rename-project"]];
 RenameProject.usage = clipanion_1.Command.Usage({
     category: "getting-started",
-    description: "This script will rename all occurrences of mashed-app and chocolat-chaud with your own names.",
-    examples: [["A basic example", "npm run mashed-app-cli rename-project --organization mashed_potato_org --project mashed-app"]],
+    description: "This script will rename all occurrences of mashedapp and chocolat-chaud with your own names.",
+    examples: [["A basic example", "npm run mashedapp-cli rename-project --organization mashed_potato_org --project mashedapp"]],
 });
 
 
@@ -453,8 +453,8 @@ const generate_entity_index_file_1 = __webpack_require__("./apps/cli/src/command
 const rename_project_1 = __webpack_require__("./apps/cli/src/commands/rename-project.ts");
 const [, , ...args] = process.argv;
 const cli = new clipanion_1.Cli({
-    binaryLabel: `mashed-app-cli`,
-    binaryName: `npm run mashed-app-cli`,
+    binaryLabel: `mashedapp-cli`,
+    binaryName: `npm run mashedapp-cli`,
     binaryVersion: `1.0.0`,
 });
 cli.register(rename_project_1.RenameProject);
