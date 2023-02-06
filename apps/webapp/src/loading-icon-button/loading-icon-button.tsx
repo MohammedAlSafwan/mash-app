@@ -30,7 +30,7 @@ export const LoadingIconButton: FC<Props> = props => {
   return (
     <div className={clsx(classes.root, props.className)}>
       <IconButton edge="end" onClick={props.onClick} disabled={props.loading}>
-        <props.Icon />
+        {/* <props.Icon/> */}
       </IconButton>
       {props.loading && <CircularProgress size={45} className={classes.progress} />}
     </div>

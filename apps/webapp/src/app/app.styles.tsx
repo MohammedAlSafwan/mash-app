@@ -8,8 +8,4 @@ export const useAppStyles = makeStyles((theme: Theme) => ({
     maxWidth: 600,
     margin: "50px auto",
   },
-  cardContainer: {
-    display: "grid",
-    gridGap: theme.spacing(2),
-  },
 }))

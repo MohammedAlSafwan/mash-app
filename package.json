@@ -31,7 +31,7 @@
     "mongo:win32": "docker-compose -f ./apps/database/mongo/docker-compose.yml up",
     "nx": "nx",
     "postgres": "run-script-os",
-    "postgres:default": "sudo docker-compose -f ./apps/database/postgres/docker-compose.yml up",
+    "postgres:default": "sudo docker compose -f ./apps/database/postgres/docker-compose.yml up",
     "postgres:win32": "docker-compose -f ./apps/database/postgres/docker-compose.yml up",
     "remap-api-url": "ts-node ./.do/remap-api-url.ts",
     "remap-redoc": "ts-node ./.do/remap-redoc.ts",

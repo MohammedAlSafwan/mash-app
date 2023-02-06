@@ -3,7 +3,7 @@ import { ApiOperation, ApiTags } from "@nestjs/swagger"
 import { Crud, CrudController } from "@nestjsx/crud"
 import { Todo } from "@mashedapp/models"
 
-import { TodosService } from "../../services/todos.service"
+import { TodosService } from "../../services/todos/todos.service"
 
 @ApiTags("todos")
 @Controller("todos")
