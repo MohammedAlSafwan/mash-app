@@ -1,6 +1,6 @@
 import { Controller } from "@nestjs/common"
 import { ApiOperation, ApiTags } from "@nestjs/swagger"
-import { Crud, CrudController} from "@nestjsx/crud"
+import { CreateManyDto, Crud, CrudController, CrudRequest, GetManyDefaultResponse} from "@nestjsx/crud"
 import { Item } from "@mashedapp/models"
 import { ItemsService } from "../../services/items/items.service"
 
