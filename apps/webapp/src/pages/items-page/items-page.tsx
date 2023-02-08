@@ -1,6 +1,6 @@
 import { Item } from "@mashedapp/models"
 import { CircularProgress } from "@mui/material"
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector } from "react-redux"
 
 import ItemCard from "../../components/global/item-card"
@@ -18,9 +18,6 @@ export const ItemsPage: React.FC<Props> = () => {
     //Fetch Data
     const { data, isLoading: isGetAllItemsLoading } = useGetManyItemsQuery({ sort: ["id,ASC"] })
     const items = useSelector(() => (data as unknown as Item[]) || []);
-
-    useEffect(() => {
-    }, [])
 
     return (
         <>{console.log("items", items)}
