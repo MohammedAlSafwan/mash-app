@@ -1,9 +1,8 @@
 import { Card, CardContent } from "@mui/material"
 import clsx from "clsx"
 import React from "react"
+import { ItemsPage } from "../pages/items-page/items-page"
 
-// import { SnackbarListener } from "../components/global/snackbar-listener/snackbar-listener"
-// import { TodosPage } from "../pages/todos-page/todos-page"
 import { useAppStyles } from "./app.styles"
 
 export const App = () => {
@@ -11,13 +10,8 @@ export const App = () => {
 
   return (
     <div>
-      {/* <SnackbarListener />
-      <TodosPage /> */}
-      <Card>
-        <CardContent>
-        </CardContent>
-      </Card>
-    
+
+      <ItemsPage/>
     </div>
   )
 }

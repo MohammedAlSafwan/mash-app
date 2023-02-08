@@ -1,15 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 
+import { api } from "./api"
 import { addGeneratedCacheKeys } from "./endpoints/generated-cache-keys"
 import { errorMiddleware } from "./middlewares/error-middleware"
-import { api } from "./api"
-import { snackbarThunksSlice } from "./thunks-slice/snackbar-thunks-slice"
+import { cartReducer } from "./thunks-slice/cart-thunks-slice"
 
 addGeneratedCacheKeys()
 
 export const rootReducer = combineReducers({
-  snackbarReducer: snackbarThunksSlice.reducer,
+  cart: cartReducer,
   [api.reducerPath]: api.reducer,
 })
 

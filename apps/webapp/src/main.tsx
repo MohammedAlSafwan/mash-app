@@ -8,6 +8,9 @@ import { App } from "./app/app"
 import { store } from "./redux/store"
 
 const theme = createTheme({
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  },
   components: {
     MuiCardContent: {
       styleOverrides: {

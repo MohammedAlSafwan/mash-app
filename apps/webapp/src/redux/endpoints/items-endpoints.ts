@@ -1,9 +1,10 @@
+import { Item } from "@mashedapp/models"
 import { api } from "../api"
 const injectedRtkApi = api.injectEndpoints({
   endpoints: build => ({
-    getManyTodos: build.query<GetManyTodosApiResponse, GetManyTodosApiArg>({
+    getManyItems: build.query<GetManyItemsApiResponse, GetManyItemsApiArg>({
       query: queryArg => ({
-        url: `/api/todos`,
+        url: `/api/items`,
         params: {
           fields: queryArg.fields,
           s: queryArg.s,
@@ -18,21 +19,21 @@ const injectedRtkApi = api.injectEndpoints({
         },
       }),
     }),
-    createOneTodo: build.mutation<CreateOneTodoApiResponse, CreateOneTodoApiArg>({
-      query: queryArg => ({ url: `/api/todos`, method: "POST", body: queryArg.todo }),
+    createOneItem: build.mutation<CreateOneItemApiResponse, CreateOneItemApiArg>({
+      query: queryArg => ({ url: `/api/items`, method: "POST", body: queryArg.item }),
     }),
-    updateOneTodo: build.mutation<UpdateOneTodoApiResponse, UpdateOneTodoApiArg>({
-      query: queryArg => ({ url: `/api/todos/${queryArg.id}`, method: "PATCH", body: queryArg.todo }),
+    updateOneItem: build.mutation<UpdateOneItemApiResponse, UpdateOneItemApiArg>({
+      query: queryArg => ({ url: `/api/items/${queryArg.id}`, method: "PATCH", body: queryArg.item }),
     }),
-    deleteOneTodo: build.mutation<DeleteOneTodoApiResponse, DeleteOneTodoApiArg>({
-      query: queryArg => ({ url: `/api/todos/${queryArg.id}`, method: "DELETE" }),
+    deleteOneItem: build.mutation<DeleteOneItemApiResponse, DeleteOneItemApiArg>({
+      query: queryArg => ({ url: `/api/items/${queryArg.id}`, method: "DELETE" }),
     }),
   }),
   overrideExisting: false,
 })
-export { injectedRtkApi as todosApi }
-export type GetManyTodosApiResponse = /** status 200 Get many base response */ GetManyTodoResponseDto | Todo[]
-export type GetManyTodosApiArg = {
+export { injectedRtkApi as itemsApi }
+export type GetManyItemsApiResponse = /** status 200 Get many base response */ GetManyItemResponseDto | Item[]
+export type GetManyItemsApiArg = {
   /** Selects resource fields. <a href="https://github.com/nestjsx/crud/wiki/Requests#select" target="_blank">Docs</a> */
   fields?: string[]
   /** Adds search condition. <a href="https://github.com/nestjsx/crud/wiki/Requests#search" target="_blank">Docs</a> */
@@ -54,30 +55,25 @@ export type GetManyTodosApiArg = {
   /** Reset cache (if was enabled). <a href="https://github.com/nestjsx/crud/wiki/Requests#cache" target="_blank">Docs</a> */
   cache?: number
 }
-export type CreateOneTodoApiResponse = /** status 201 Get create one base response */ Todo
-export type CreateOneTodoApiArg = {
-  todo: Todo
+export type CreateOneItemApiResponse = /** status 201 Get create one base response */ Item
+export type CreateOneItemApiArg = {
+  item: Item
 }
-export type UpdateOneTodoApiResponse = /** status 200 Response */ Todo
-export type UpdateOneTodoApiArg = {
+export type UpdateOneItemApiResponse = /** status 200 Response */ Item
+export type UpdateOneItemApiArg = {
   id: number
-  todo: Todo
+  item: Item
 }
-export type DeleteOneTodoApiResponse = unknown
-export type DeleteOneTodoApiArg = {
+export type DeleteOneItemApiResponse = unknown
+export type DeleteOneItemApiArg = {
   id: number
 }
-export type Todo = {
-  text: string
-  id?: number
-  createdAt?: string
-  updatedAt?: string
-}
-export type GetManyTodoResponseDto = {
-  data: Todo[]
+
+export type GetManyItemResponseDto = {
+  data: Item[]
   count: number
   total: number
   page: number
   pageCount: number
 }
-export const { useGetManyTodosQuery, useCreateOneTodoMutation, useUpdateOneTodoMutation, useDeleteOneTodoMutation } = injectedRtkApi
+export const { useGetManyItemsQuery, useCreateOneItemMutation, useUpdateOneItemMutation, useDeleteOneItemMutation } = injectedRtkApi

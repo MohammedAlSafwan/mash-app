@@ -1,1 +1,1 @@
-create database "mashed_app";
+-- create database "mashed_app";

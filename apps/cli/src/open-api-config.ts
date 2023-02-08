@@ -6,9 +6,9 @@ const config: ConfigFile = {
   apiFile: `${reduxPath}/mashedapp-api.ts`,
   apiImport: "mashedappApi",
   outputFiles: {
-    [`${reduxPath}/endpoints/todos-endpoints.ts`]: { exportName: "todosApi", filterEndpoints: /todo/i },
+    [`${reduxPath}/endpoints/items-endpoints.ts`]: { exportName: "itemsApi", filterEndpoints: /item/i },
   },
-  filterEndpoints: [/todo/i],
+  filterEndpoints: [/item/i],
   exportName: "mashedappApi",
   hooks: true,
 }

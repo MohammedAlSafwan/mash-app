@@ -38,11 +38,11 @@ services:
       dockerfile: ./apps/api/Dockerfile
     ports:
       - "3333:3333"
-  nginx:
-    container_name: load-balancer-health-check
-    image: nginx:latest
-    ports:
-      - "80:80"
+  # nginx:
+  #   container_name: load-balancer-health-check
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"
 
 volumes:
   mashed_app-data:

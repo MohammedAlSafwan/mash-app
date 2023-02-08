@@ -4,7 +4,6 @@ import { ServeStaticModule } from "@nestjs/serve-static"
 import { configuration } from "../config/configuration"
 import { HealthModule } from "../endpoints/health/health.module"
 import { ItemsModule } from "../endpoints/items/items.module"
-import { TodosModule } from "../endpoints/todos/todos.module"
 import { getRootModuleImports } from "../utils/utils"
 
 @Module({
@@ -15,7 +14,6 @@ import { getRootModuleImports } from "../utils/utils"
       exclude: ["/api*"],
     }),
     HealthModule,
-    TodosModule,
     ItemsModule,
   ],
   controllers: [],

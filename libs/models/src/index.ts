@@ -9,6 +9,3 @@ export * from "./lib/item.entity"
 // root.entity.ts
 export * from "./lib/root.entity"
 
-// todo.entity.ts
-export * from "./lib/todo.entity"
-
