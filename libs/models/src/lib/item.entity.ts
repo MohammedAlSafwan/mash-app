@@ -22,6 +22,6 @@ export class Item extends RootEntity {
   @Max(5)
   rating: number
 
-  @Column()
-  isInCart: boolean
+  @Column({ nullable: true, type: "boolean" })
+  isInCart: boolean;
 }

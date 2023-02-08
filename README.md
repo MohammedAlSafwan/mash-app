@@ -7,10 +7,45 @@ This test will consist of building a very simple application which represents a 
 - [x] When you add an item to your cart it should be represented in the UI
 - [x] You should be able to remove products from the cart
 - [x] You must add the ability to rate products with a score from (1 to 5)
-- [ ] Provide instructions in the README to launch the application
+- [x] Provide instructions in the README to launch the application
 
 ## Bonus points
 - [x] **Use TypeScript**
 - [x] Implement a backend and persist the state in a database
-- [ ] Have a single command to launch the whole application
+- [x] Have a single command to launch the whole application
 - [x] Use the open-source project [stator](https://github.com/chocolat-chaud-io/stator) as a template for your application
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Docker Engine](https://docs.docker.com/engine/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [node.js](https://nodejs.org/en/download/) >=14.x <15.0.0
+
+## Run the application
+
+### From Script
+simply run:
+
+```
+sh install.sh
+```
+
+### Manually 
+1- Install the dependencies:
+
+```
+npm i
+```
+
+2- Build: 
+
+```
+npm run build
+```
+
+3- Run
+```
+docker compose up
+```
