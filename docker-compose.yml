@@ -23,7 +23,9 @@ services:
       - mashed_app-data:/var/lib/postgresql/mashed_app/data
   webapp:
     container_name: webapp-full-stack
-    image: mohammedalsafwan/mashed_webapp:latest
+    build:
+      context: .
+      dockerfile: ./apps/webapp/Dockerfile
     ports:
       - "8081:80"
   api:
