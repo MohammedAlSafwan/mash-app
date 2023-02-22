@@ -61,12 +61,12 @@ export type CreateOneItemApiArg = {
 }
 export type UpdateOneItemApiResponse = /** status 200 Response */ Item
 export type UpdateOneItemApiArg = {
-  id: number
+  id: string
   item: Item
 }
 export type DeleteOneItemApiResponse = unknown
 export type DeleteOneItemApiArg = {
-  id: number
+  id: string
 }
 
 export type GetManyItemResponseDto = {

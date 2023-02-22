@@ -8,7 +8,7 @@ import { store } from '../../redux/store';
 import { addItem, removeItem } from '../../redux/thunks-slice/cart-thunks-slice';
 
 interface Props {
-    id: number,
+    id: string,
     src?: string,
     name?: string,
     price?: number,

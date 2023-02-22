@@ -16,7 +16,7 @@ export const ItemsPage: React.FC<Props> = () => {
     const classes = useItemsPageStyles()
 
     //Fetch Data
-    const { data, isLoading: isGetAllItemsLoading } = useGetManyItemsQuery({ sort: ["id,ASC"] })
+    const { data, isLoading: isGetAllItemsLoading } = useGetManyItemsQuery({ sort: ["name,ASC"] })
     const items = useSelector(() => (data as unknown as Item[]) || []);
 
     return (

@@ -1,8 +1,8 @@
 import { CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 export class RootEntity {
-  @PrimaryGeneratedColumn()
-  id?: number
+  @PrimaryGeneratedColumn("uuid")
+  id?: string
 
   @CreateDateColumn({ type: "timestamp" })
   createdAt?: Date
