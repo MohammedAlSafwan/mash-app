@@ -1,4 +1,4 @@
-# Vention MachineCloud test
+# Mash-app 
 
 This test will consist of building a very simple application which represents a marketplace.
 
@@ -20,6 +20,36 @@ This test will consist of building a very simple application which represents a 
 - [x] Implement a backend and persist the state in a database
 - [x] Have a single command to launch the whole application
 - [x] Use the open-source project [stator](https://github.com/chocolat-chaud-io/stator) as a template for your application
+
+## Quick look at docker-compose
+                  ┌─────────────────────┐
+                  │      webapp         │
+                  │   container_name:   │
+                  │  webapp-full-stack  │
+                  └─────────────────────┘
+                            │
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │       api         │
+                  │  container_name:  │
+                  │  api-full-stack   │
+                  └───────────────────┘
+                            │
+                            │
+                            ▼
+         ┌────────────────────────────────────────────┐
+         │                nginx                       │
+         │ container_name: load-balancer-health-check │
+         └────────────────────────────────────────────┘
+                            │
+                            │
+                            ▼
+         ┌────────────────────────────────────────┐
+         │               database                 │
+         │           container_name:              │
+         │     mashed_app-postgres-full-stack     │
+         └────────────────────────────────────────┘
 
 ## 🚀 Getting Started
 
@@ -58,12 +88,3 @@ npm run build
 ```
 docker compose up
 ```
-
-## Notes and Discussion
-
-- In the initial `docker-compose` file, we had the `nginx` as a `Load Balancer`. In our case, it is not needed. The stack is running locally.
-- `Web-app` is running on port `8081`. Port `80` might be used by other apps.
-- `API` is running on port `3333`.
-- The app is made as simple as possible. However, in a production app:
-  - `Cart` would have it is own table. In our simple app, it was a simple `slice` + simple boolean in `Item` object.
-  - `User` rating for single `Item` would be stored in a saperate table and computed for every `Item` when needed.
