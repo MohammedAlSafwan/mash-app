@@ -93,7 +93,7 @@ jobs:
       - name: Wait for review app to be ready
         run: node node_modules/zx/zx.mjs ./.github/workflows/wait-for-review-app-url-to-be-ready.mjs
         env:
-         DROPLET_URL: ${{ env.DROPLET_URL }}
+          DROPLET_URL: ${{ env.DROPLET_URL }}
 
       - name: Find deployment comment
         uses: peter-evans/find-comment@v1

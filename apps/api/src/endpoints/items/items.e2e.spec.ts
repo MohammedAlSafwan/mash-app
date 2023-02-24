@@ -28,8 +28,8 @@ describe("Items", () => {
         .expect(200)
 
       expect(body).toMatchObject([
-        { id: expect.any(Number), text: "test-name-0" },
-        { id: expect.any(Number), text: "test-name-1" },
+        { id: expect.any(String), text: "test-name-0" },
+        { id: expect.any(String), text: "test-name-1" },
       ])
     })
 
@@ -44,24 +44,28 @@ describe("Items", () => {
         .expect("Content-Type", /json/)
         .expect(201)
 
-      expect(body).toMatchObject({ id: expect.any(Number), text: "test-name-0" })
+      expect(body).toMatchObject({ id: expect.any(String), text: "test-name-0" })
     })
 
     it("should update the name of a item", async () => {
       const { body } = await supertest
         .agent(testingHelper.app.getHttpServer())
-        .patch(`/items/1`)
+        .patch(`/items/ff540c7f-2430-4153-94ea-5384ab5e0532`)
         .send({ text: "updated-name" })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
         .expect(200)
 
-      expect(body).toMatchObject({ id: 1, text: "updated-name" })
+      expect(body).toMatchObject({ id: "ff540c7f-2430-4153-94ea-5384ab5e0532", text: "updated-name" })
     })
 
     it("should delete one item", async () => {
-      await supertest.agent(testingHelper.app.getHttpServer()).delete(`/items/1`).set("Accept", "application/json").expect(200)
-      const missingItem = await repository.findOne({ id: 1 })
+      await supertest
+        .agent(testingHelper.app.getHttpServer())
+        .delete(`/items/ff540c7f-2430-4153-94ea-5384ab5e0532`)
+        .set("Accept", "application/json")
+        .expect(200)
+      const missingItem = await repository.findOne({ id: "ff540c7f-2430-4153-94ea-5384ab5e0532" })
 
       expect(missingItem).toBe(undefined)
     })

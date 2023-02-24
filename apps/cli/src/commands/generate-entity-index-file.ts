@@ -1,7 +1,9 @@
-import fs from "fs";
-import path from "path";
-import { walk } from "../utils";
-import { Command } from "clipanion";
+import fs from "fs"
+import path from "path"
+
+import { Command } from "clipanion"
+
+import { walk } from "../utils"
 
 export class GenerateEntityIndexFile extends Command {
   static paths = [["generate-entity-index-file"]]

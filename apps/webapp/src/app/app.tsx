@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@mui/material"
 import clsx from "clsx"
 import React from "react"
-import { ItemsPage } from "../pages/items-page/items-page"
 
+import { ItemsPage } from "../pages/items-page/items-page"
 import { useAppStyles } from "./app.styles"
 
 export const App = () => {
@@ -10,8 +10,7 @@ export const App = () => {
 
   return (
     <div>
-
-      <ItemsPage/>
+      <ItemsPage />
     </div>
   )
 }

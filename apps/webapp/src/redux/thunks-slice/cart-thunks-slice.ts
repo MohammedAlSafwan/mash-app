@@ -1,5 +1,5 @@
 import { Item } from "@mashedapp/models"
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 const cartSlice = createSlice({
   name: "cart",

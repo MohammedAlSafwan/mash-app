@@ -1,6 +1,6 @@
+import { Item } from "@mashedapp/models"
 import { Module } from "@nestjs/common"
 import { TypeOrmModule } from "@nestjs/typeorm"
-import { Item } from "@mashedapp/models"
 
 import { ItemsService } from "./items.service"
 

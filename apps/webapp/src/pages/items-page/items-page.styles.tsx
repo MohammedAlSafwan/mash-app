@@ -11,7 +11,7 @@ export const useItemsPageStyles = makeStyles((theme: Theme) => ({
     width: "50px",
     height: "50px",
     zIndex: 10,
-    borderRadius: "50%"
+    borderRadius: "50%",
   },
   cardContainer: {
     display: "flex",
@@ -35,7 +35,7 @@ export const useItemsPageStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: "0px",
-    margin: "0px"
+    margin: "0px",
   },
   layover: {
     display: "flex",
@@ -43,7 +43,7 @@ export const useItemsPageStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: "0px",
-    margin: "0px"
+    margin: "0px",
   },
   cartItemLayover: {
     display: "flex",
@@ -55,9 +55,9 @@ export const useItemsPageStyles = makeStyles((theme: Theme) => ({
   },
   cardMediaImage: {
     width: "200px",
-    height: "200px"
+    height: "200px",
   },
   getLoadingProgress: {
     justifySelf: "center",
-  }
+  },
 }))

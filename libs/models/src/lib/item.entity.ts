@@ -1,27 +1,29 @@
-import { Max, Min, MinLength } from "class-validator"
+import { IsBoolean, IsNotEmpty, Max, Min, MinLength } from "class-validator"
 import { Column, Entity } from "typeorm"
+import { Transform } from 'class-transformer';
 
 import { RootEntity } from "./root.entity"
 
 @Entity()
 export class Item extends RootEntity {
+  @IsNotEmpty()
   @Column()
-  @MinLength(1)
   name: string
 
-  @Column()
   @Min(0)
+  @Column()
   price: number
 
-  @Column()
   @MinLength(0)
+  @Column()
   image: string
 
-  @Column()
   @Min(0)
   @Max(5)
+  @Column()
   rating: number
 
-  @Column({ nullable: true, type: "boolean" })
-  isInCart: boolean;
+  @IsBoolean()
+  @Column({ nullable: true })
+  isInCart: boolean
 }

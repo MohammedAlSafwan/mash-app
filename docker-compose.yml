@@ -21,23 +21,23 @@ services:
       - ./apps/database/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
       # named volume
       - mashed_app-data:/var/lib/postgresql/mashed_app/data
-  webapp:
-    container_name: webapp-full-stack
-    build:
-      context: .
-      dockerfile: ./apps/webapp/Dockerfile
-    ports:
-      - "8081:80"
-  api:
-    container_name: api-full-stack
-    environment:
-      - DATABASE_PORT=5432
-      - DATABASE_HOST=mashed_app-postgres-full-stack
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
-    ports:
-      - "3333:3333"
+  # webapp:
+  #   container_name: webapp-full-stack
+  #   build:
+  #     context: .
+  #     dockerfile: ./apps/webapp/Dockerfile
+  #   ports:
+  #     - "8081:80"
+  # api:
+  #   container_name: api-full-stack
+  #   environment:
+  #     - DATABASE_PORT=5432
+  #     - DATABASE_HOST=mashed_app-postgres-full-stack
+  #   build:
+  #     context: .
+  #     dockerfile: ./apps/api/Dockerfile
+  #   ports:
+  #     - "3333:3333"
   # nginx:
   #   container_name: load-balancer-health-check
   #   image: nginx:latest

@@ -1,9 +1,11 @@
-import { Module } from "@nestjs/common"
+import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common"
 import { ServeStaticModule } from "@nestjs/serve-static"
+import { Connection } from "typeorm"
 
 import { configuration } from "../config/configuration"
 import { HealthModule } from "../endpoints/health/health.module"
 import { ItemsModule } from "../endpoints/items/items.module"
+import { LoggerMiddleware } from "../utils/middleware/LoggerMiddleware"
 import { getRootModuleImports } from "../utils/utils"
 
 @Module({
@@ -19,4 +21,9 @@ import { getRootModuleImports } from "../utils/utils"
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes("*")
+  }
+  constructor(private readonly connection: Connection) {}
+}

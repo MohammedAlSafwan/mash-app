@@ -1,6 +1,6 @@
 import { Controller, Get } from "@nestjs/common"
 import { ApiOperation, ApiTags } from "@nestjs/swagger"
-import { HealthCheck, HealthCheckService, HttpHealthIndicator } from "@nestjs/terminus";
+import { HealthCheck, HealthCheckService, HttpHealthIndicator } from "@nestjs/terminus"
 
 import { environment } from "../../environments/environment"
 

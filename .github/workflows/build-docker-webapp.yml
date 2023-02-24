@@ -25,8 +25,7 @@ jobs:
         shell: bash
         env:
           nx_cloud_token: ${{ secrets.NX_CLOUD_TOKEN }}
-        run:
-          sed -i "s/nx_cloud_token/$nx_cloud_token/" $GITHUB_WORKSPACE/nx.json
+        run: sed -i "s/nx_cloud_token/$nx_cloud_token/" $GITHUB_WORKSPACE/nx.json
 
       - name: Install npm packages
         run: npm ci

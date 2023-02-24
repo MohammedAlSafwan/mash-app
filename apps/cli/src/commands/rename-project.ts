@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 import { Command, Option } from "clipanion"
-import { camelCase, kebabCase } from "lodash"
+import { camelCase } from "lodash"
 
 import { walk } from "../utils"
 

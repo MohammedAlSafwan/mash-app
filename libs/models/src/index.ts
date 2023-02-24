@@ -8,4 +8,3 @@ export * from "./lib/item.entity"
 
 // root.entity.ts
 export * from "./lib/root.entity"
-

@@ -1,5 +1,4 @@
-import { Item } from "@mashedapp/models"
-import { api } from "../api"
+import {api } from "../api"
 const injectedRtkApi = api.injectEndpoints({
   endpoints: build => ({
     getManyItems: build.query<GetManyItemsApiResponse, GetManyItemsApiArg>({
@@ -68,7 +67,16 @@ export type DeleteOneItemApiResponse = unknown
 export type DeleteOneItemApiArg = {
   id: string
 }
-
+export type Item = {
+  name: string
+  price: number
+  image: string
+  rating: number
+  isInCart: boolean
+  id?: string
+  createdAt?: string
+  updatedAt?: string
+}
 export type GetManyItemResponseDto = {
   data: Item[]
   count: number

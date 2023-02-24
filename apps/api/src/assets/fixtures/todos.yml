@@ -1,9 +1,9 @@
 entity: Todo
 items:
   todo1:
-    id: 1
+    id: ff540c7f-2430-4153-94ea-5384ab5e0532
     text: test-name-0
 
   todo2:
-    id: 2
+    id: 6ac632a1-0d75-4cb7-8578-a52f671826e8
     text: test-name-1
