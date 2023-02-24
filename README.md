@@ -88,12 +88,3 @@ npm run build
 ```
 docker compose up
 ```
-
-## Notes and Discussion
-
-- In the initial `docker-compose` file, we had the `nginx` as a `Load Balancer`. In our case, it is not needed. The stack is running locally.
-- `Web-app` is running on port `8081`. Port `80` might be used by other apps.
-- `API` is running on port `3333`.
-- The app is made as simple as possible. However, in a production app:
-  - `Cart` would have it is own table. In our simple app, it was a simple `slice` + simple boolean in `Item` object.
-  - `User` rating for single `Item` would be stored in a saperate table and computed for every `Item` when needed.
