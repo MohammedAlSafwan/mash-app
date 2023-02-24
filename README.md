@@ -1,4 +1,4 @@
-# Vention MachineCloud test
+# Mash-app 
 
 This test will consist of building a very simple application which represents a marketplace.
 
