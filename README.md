@@ -19,7 +19,6 @@ This test will consist of building a very simple application which represents a 
 - [x] **Use TypeScript**
 - [x] Implement a backend and persist the state in a database
 - [x] Have a single command to launch the whole application
-- [x] Use the open-source project [stator](https://github.com/chocolat-chaud-io/stator) as a template for your application
 
 ## Quick look at docker-compose
                   ┌─────────────────────┐
